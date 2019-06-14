@@ -28,9 +28,9 @@ public class TheorieGrapheBuilder {
 			// si le poids actuel est > au poids 
 			if(poidsActuel > entry.getValue()) {
 				VilleGetByNom(entry.getKey()).poids = entry.getValue();
+				System.out.println(VilleGetByNom(entry.getKey()).nom+" "+(VilleGetByNom(entry.getKey()).poids));
+				calcChemin(VilleGetByNom(entry.getKey()));
 			}
-			System.out.println(VilleGetByNom(entry.getKey()).nom+" "+(VilleGetByNom(entry.getKey()).poids));
-			calcChemin(VilleGetByNom(entry.getKey()));
 			
 			
 			
@@ -101,6 +101,7 @@ public class TheorieGrapheBuilder {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				nbBoutonClic++;
+				
 				villeSource = amiens;
 			}
 		});
