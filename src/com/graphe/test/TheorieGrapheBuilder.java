@@ -29,8 +29,9 @@ public class TheorieGrapheBuilder {
 			if(poidsActuel > entry.getValue()) {
 				VilleGetByNom(entry.getKey()).poids = entry.getValue();
 			}
+			System.out.println(VilleGetByNom(entry.getKey()).nom+" "+(VilleGetByNom(entry.getKey()).poids));
+			calcChemin(VilleGetByNom(entry.getKey()));
 			
-			System.out.println(VilleGetByNom(entry.getKey()).poids);
 			
 			
 		}
@@ -61,7 +62,9 @@ public class TheorieGrapheBuilder {
 				try {
 					TheorieGrapheBuilder window = new TheorieGrapheBuilder();
 					window.frame.setVisible(true);
-					window.calcChemin();
+					window.villeSource= window.VilleGetByNom("amiens");
+					window.villeSource.poids=0;
+					window.calcChemin(window.villeSource);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
