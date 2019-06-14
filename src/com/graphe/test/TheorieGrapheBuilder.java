@@ -37,13 +37,7 @@ public class TheorieGrapheBuilder {
 		}
 			
 			
-//for (Map.Entry<String, User> entry : map2.entrySet()) {
-//	String key = entry.getKey();
-//	// getValue() appel de la methode toString de l'objet (qui affiche le prenom
-//	// ici)
-//	User value = entry.getValue();
-//	System.out.println(key + " = " + value);
-//}			
+			
 	}
 	public Ville VilleGetByNom(String nom) {
 		for(Ville ville : listVilles) {
