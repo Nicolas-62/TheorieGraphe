@@ -28,6 +28,7 @@ public class TheorieGrapheBuilder {
 	private List<Ville> listVilles = new ArrayList<Ville>();
 	private JTextField inputResultat = new JTextField();
 	private JTextArea txtErreur = new JTextArea();
+	private boolean calcul = false;
 
 	/*
 	 * @ Fonction : Alogithme de Ford qui calcule le chemin le plus court
@@ -83,10 +84,9 @@ public class TheorieGrapheBuilder {
 	}
 
 	public void setVilleClic(Ville ville) {
+		/* On ne peut pas deselectionner un bouton */
 		if (!ville.bouton.isSelected()) {
-			if (nbBoutonClic > 0) {
-				nbBoutonClic--;
-			}
+			ville.bouton.setSelected(true);
 		} else {
 			if (nbBoutonClic == 1) {
 				villeArrivee = ville;
@@ -599,10 +599,15 @@ public class TheorieGrapheBuilder {
 		btnTrouverChemin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				villeDepart.poids = 0;
-				calcChemin(villeDepart);
-				afficherChemin(villeArrivee);
-				inputResultat.setText(""+villeArrivee.poids);
+				if(nbBoutonClic != 2) {
+					txtErreur.setVisible(true);
+				}else {
+					villeDepart.poids = 0;
+					calcChemin(villeDepart);
+					afficherChemin(villeArrivee);
+					inputResultat.setText(""+villeArrivee.poids);
+					calcul = true;
+				}
 			}
 		});
 		panel.add(btnTrouverChemin);
@@ -630,19 +635,38 @@ public class TheorieGrapheBuilder {
 		JLabel txtDistance = new JLabel("Distance : ");
 		txtDistance.setForeground(UIManager.getColor("CheckBoxMenuItem.acceleratorSelectionForeground"));
 		txtDistance.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtDistance.setBounds(10, 208, 63, 14);
+		txtDistance.setBounds(10, 230, 63, 14);
 		panel.add(txtDistance);
 		JLabel txtKm = new JLabel("km");
 		txtKm.setFont(new Font("Arial", Font.PLAIN, 13));
 		txtKm.setBackground(UIManager.getColor("CheckBoxMenuItem.selectionBackground"));
 		txtKm.setForeground(UIManager.getColor("CheckBoxMenuItem.acceleratorSelectionForeground"));
-		txtKm.setBounds(136, 208, 48, 14);
+		txtKm.setBounds(136, 230, 48, 14);
 		panel.add(txtKm);
 		/* distance calculée */
 		inputResultat = new JTextField();
-		inputResultat.setBounds(76, 205, 53, 20);
+		inputResultat.setBounds(73, 227, 53, 20);
 		panel.add(inputResultat);
 		inputResultat.setColumns(10);
+		
+		JButton btRecommencer = new JButton("Recommencer");
+		btRecommencer.setBounds(10, 194, 129, 23);
+		btRecommencer.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				for (Ville v : listVilles) {
+					v.bouton.setSelected(false);
+					v.bouton.setBackground(Color.WHITE);
+					v.poids = Integer.MAX_VALUE;
+					v.setVilleOrigine(null);
+				}
+				txtErreur.setVisible(false);
+				villeDepart = null;
+				villeArrivee = null;
+				nbBoutonClic = 0;
+			}
+		});		
+		panel.add(btRecommencer);
 
 		/**************
 		 * Liaison des villes avec leurs villes de destination
