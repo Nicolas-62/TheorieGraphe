@@ -89,7 +89,7 @@ public class TheorieGrapheBuilder {
 	public void afficherChemin(Ville ville) {
 		try {
 			if (ville != null) {
-				System.out.println(ville.nom);
+//				System.out.println(ville.nom);
 				ville.bouton.setBackground(Color.RED);
 				afficherChemin(ville.villeOrigine);
 			}
@@ -136,9 +136,10 @@ public class TheorieGrapheBuilder {
 				nbBoutonClic = 1;
 			}
 		}
-		System.out.println(nbBoutonClic);
-		System.out.println("ville depart : " + villeDepart);
-		System.out.println("ville arrivee : " + villeArrivee);
+		/* affichages de deboggage */
+//		System.out.println(nbBoutonClic);
+//		System.out.println("ville depart : " + villeDepart);
+//		System.out.println("ville arrivee : " + villeArrivee);
 	}
 
 	/**
