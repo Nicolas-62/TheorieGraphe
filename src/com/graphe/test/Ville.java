@@ -7,18 +7,19 @@ import javax.swing.JRadioButton;
 
 /*
  * @ Object : Ville, ville .
- * @ Param : poids, représente la valeur du poids associé à un sommet, par défaut il est infini.
+ * @ Param : poids, valeur du poids associé à un sommet, par défaut il est infini.
+ * @ Param : bouton,  bouton cliquable présent sur la carte auquel est associé la ville
  * @ Param : nom, nom de la ville.
  * @ Param : villeDest,  Liste des villes de destination possibles et la distance de celles ci.
  * @ Param : villeOrigine, ville par laquelle est passée l'algorithme pour calculer un chemin.
  */
 public class Ville {
 
-	int poids = Integer.MAX_VALUE;
-	JRadioButton bouton;
-	String nom;
-	Map<Ville, Integer> villesDest = new HashMap<Ville, Integer>();
-	Ville villeOrigine;
+	public int poids = Integer.MAX_VALUE;
+	public JRadioButton bouton;
+	public String nom;
+	public Map<Ville, Integer> villesDest = new HashMap<Ville, Integer>();
+	public Ville villeOrigine;
 	
 	/* Constructeur */
 	Ville(String nom) {

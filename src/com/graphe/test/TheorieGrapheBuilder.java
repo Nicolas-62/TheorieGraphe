@@ -268,7 +268,7 @@ public class TheorieGrapheBuilder {
 		Ville strasbourg = new Ville("Strasbourg");
 		JRadioButton btStrasbourg = new JRadioButton("Strasbourg");
 		btStrasbourg.setBackground(Color.WHITE);
-		btStrasbourg.setBounds(552, 173, 81, 23);
+		btStrasbourg.setBounds(552, 173, 94, 23);
 		btStrasbourg.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -296,7 +296,7 @@ public class TheorieGrapheBuilder {
 		Ville leHavre = new Ville("leHavre");
 		JRadioButton btHavre = new JRadioButton("Le Havre");
 		btHavre.setBackground(Color.WHITE);
-		btHavre.setBounds(191, 95, 69, 23);
+		btHavre.setBounds(191, 95, 81, 23);
 		btHavre.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -464,7 +464,7 @@ public class TheorieGrapheBuilder {
 		Ville laRochelle = new Ville("laRochelle");
 		JRadioButton btLaRochelle = new JRadioButton("La Rochelle");
 		btLaRochelle.setBackground(Color.WHITE);
-		btLaRochelle.setBounds(87, 385, 89, 23);
+		btLaRochelle.setBounds(87, 385, 107, 23);
 		btLaRochelle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -534,7 +534,7 @@ public class TheorieGrapheBuilder {
 		Ville annecy = new Ville("annecy");
 		JRadioButton btAnnecy = new JRadioButton("Annecy");
 		btAnnecy.setBackground(Color.WHITE);
-		btAnnecy.setBounds(585, 371, 61, 23);
+		btAnnecy.setBounds(585, 371, 69, 23);
 		btAnnecy.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -576,7 +576,7 @@ public class TheorieGrapheBuilder {
 		Ville marseille = new Ville("marseille");
 		JRadioButton btMarseille = new JRadioButton("Marseille");
 		btMarseille.setBackground(Color.WHITE);
-		btMarseille.setBounds(544, 603, 69, 23);
+		btMarseille.setBounds(544, 603, 89, 23);
 		btMarseille.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -590,7 +590,7 @@ public class TheorieGrapheBuilder {
 		Ville nice = new Ville("nice");
 		JRadioButton btNice = new JRadioButton("Nice");
 		btNice.setBackground(Color.WHITE);
-		btNice.setBounds(619, 575, 47, 23);
+		btNice.setBounds(619, 575, 65, 23);
 		btNice.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
